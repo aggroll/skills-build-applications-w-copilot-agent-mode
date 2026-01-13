@@ -1,16 +1,77 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background: linear-gradient(135deg, #e3f2fd 0%, #f8bbd0 100%);
+  color: #222;
+}
+
 .App {
-  text-align: center;
+  min-height: 100vh;
+  background: transparent;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1, h2, h3, h4, h5, h6 {
+  color: #1976d2;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a, .nav-link {
+  color: #d81b60 !important;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover, .nav-link:hover {
+  color: #1976d2 !important;
+  text-decoration: underline;
+}
+
+.navbar {
+  background: linear-gradient(90deg, #1976d2 60%, #d81b60 100%) !important;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.1);
+}
+.navbar-brand {
+  color: #fff !important;
+  font-size: 1.7rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.table {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.07);
+}
+.table th {
+  background: #1976d2;
+  color: #fff;
+  font-weight: 600;
+}
+.table-primary th { background: #90caf9 !important; color: #222 !important; }
+.table-success th { background: #a5d6a7 !important; color: #222 !important; }
+.table-info th { background: #81d4fa !important; color: #222 !important; }
+.table-warning th { background: #ffe082 !important; color: #222 !important; }
+.table-danger th { background: #ef9a9a !important; color: #222 !important; }
+
+.btn-primary { background: #1976d2 !important; border: none; }
+.btn-success { background: #388e3c !important; border: none; }
+.btn-warning { background: #fbc02d !important; border: none; color: #222 !important; }
+.btn-danger { background: #d32f2f !important; border: none; }
+
+.card {
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(33, 150, 243, 0.09);
+  border: none;
+}
+
+/* Logo styling */
+.octofit-logo {
+  height: 48px;
+  margin-right: 16px;
+  vertical-align: middle;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.15);
+}
 }
 
 .App-header {

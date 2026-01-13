@@ -4,28 +4,32 @@ const Leaderboard = () => {
   const [leaders, setLeaders] = useState([]);
   const endpoint = `https://${process.env.REACT_APP_CODESPACE_NAME}-8000.app.github.dev/api/leaderboard/`;
 
-  useEffect(() => {
-    fetch(endpoint)
-      .then(res => res.json())
-      .then(data => {
-        const results = data.results || data;
-        setLeaders(results);
-        console.log('Leaderboard API endpoint:', endpoint);
-        console.log('Fetched leaderboard:', results);
-      })
-      .catch(err => console.error('Error fetching leaderboard:', err));
-  }, [endpoint]);
-
-  return (
-    <div>
-      <h2>Leaderboard</h2>
-      <ul>
-        {leaders.map((leader, idx) => (
-          <li key={leader.id || idx}>{leader.name || JSON.stringify(leader)}</li>
-        ))}
-      </ul>
+    <div className="mb-4">
+      <h2 className="mb-3 display-6">Leaderboard</h2>
+      <div className="card shadow-sm">
+        <div className="card-body">
+          <table className="table table-bordered table-hover">
+            <thead className="table-success">
+              <tr>
+                <th>Rank</th>
+                <th>User</th>
+                <th>Points</th>
+              </tr>
+            </thead>
+            <tbody>
+              {leaders.map((entry, idx) => (
+                <tr key={idx}>
+                  <td>{entry.rank}</td>
+                  <td>{entry.user}</td>
+                  <td>{entry.points}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
-};
+}
 
 export default Leaderboard;
