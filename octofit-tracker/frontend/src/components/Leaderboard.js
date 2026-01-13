@@ -4,6 +4,20 @@ const Leaderboard = () => {
   const [leaders, setLeaders] = useState([]);
   const endpoint = `https://${process.env.REACT_APP_CODESPACE_NAME}-8000.app.github.dev/api/leaderboard/`;
 
+  useEffect(() => {
+    const fetchLeaderboard = async () => {
+      try {
+        const response = await fetch(endpoint);
+        const data = await response.json();
+        setLeaders(data);
+      } catch (error) {
+        console.error('Error fetching leaderboard:', error);
+      }
+    };
+    fetchLeaderboard();
+  }, [endpoint]);
+
+  return (
     <div className="mb-4">
       <h2 className="mb-3 display-6">Leaderboard</h2>
       <div className="card shadow-sm">
